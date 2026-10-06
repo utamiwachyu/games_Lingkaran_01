@@ -1,0 +1,67 @@
+const LEVELS=[
+{id:1,title:"Circle Explorer",tag:"LEVEL 1",icon:"🟢",desc:"Unsur, pusat, jari-jari, dan diameter",questions:[
+{q:"Sebuah lingkaran memiliki pusat O(2,−3) dan jari-jari 5. Berapakah diameternya?",c:["5","7","10","25"],a:2,e:"Diameter = 2r = 2(5) = 10."},
+{q:"Pada persamaan $(x-3)^2+(y+2)^2=16$, koordinat pusat lingkaran adalah …",c:["(3,−2)","(−3,2)","(3,2)","(−3,−2)"],a:0,e:"Bentuk baku $(x-a)^2+(y-b)^2=r^2$ memiliki pusat $(a,b)$."},
+{q:"Jari-jari lingkaran $(x+4)^2+(y-1)^2=49$ adalah …",c:["4","7","14","49"],a:1,e:"$r^2=49$, sehingga $r=7$."},
+{q:"Titik manakah yang terletak pada lingkaran $x^2+y^2=25$?",c:["(3,4)","(1,2)","(4,4)","(0,4)"],a:0,e:"$3^2+4^2=9+16=25$."},
+{q:"Jika diameter sebuah lingkaran 18 cm, luas lingkaran tersebut adalah …",c:["18π cm²","36π cm²","81π cm²","324π cm²"],a:2,e:"r=9, maka luas = πr² = 81π cm²."},
+{q:"Pusat lingkaran $x^2+y^2-6x+8y-11=0$ adalah …",c:["(−3,4)","(3,−4)","(−6,8)","(6,−8)"],a:1,e:"Lengkapi kuadrat: $(x-3)^2+(y+4)^2=36$."},
+{q:"Jika titik A(6,8) berada pada lingkaran berpusat di O(0,0), maka jari-jarinya …",c:["8","10","14","100"],a:1,e:"$r=\\sqrt{6^2+8^2}=10$."}
+]},
+{id:2,title:"Equation Hunter",tag:"LEVEL 2",icon:"🔵",desc:"Bentuk baku dan bentuk umum",questions:[
+{q:"Bentuk umum dari $(x-2)^2+(y+3)^2=25$ adalah …",c:["$x^2+y^2-4x+6y-12=0$","$x^2+y^2+4x-6y-12=0$","$x^2+y^2-4x+6y+12=0$","$x^2+y^2+4x+6y-12=0$"],a:0,e:"Kembangkan dan pindahkan 25 ke kiri."},
+{q:"Persamaan lingkaran berpusat di (−1,4) dengan jari-jari 3 adalah …",c:["$(x-1)^2+(y+4)^2=9$","$(x+1)^2+(y-4)^2=9$","$(x+1)^2+(y+4)^2=3$","$(x-1)^2+(y-4)^2=3$"],a:1,e:"Gunakan $(x-a)^2+(y-b)^2=r^2$."},
+{q:"Pada $x^2+y^2+8x-10y+25=0$, nilai jari-jari adalah …",c:["2","4","5","9"],a:1,e:"$(x+4)^2+(y-5)^2=16$, jadi r=4."},
+{q:"Jika bentuk umum lingkaran adalah $x^2+y^2+Ax+By+C=0$, maka syarat koefisien $x^2$ dan $y^2$ adalah …",c:["Berbeda","Keduanya 0","Sama dan bernilai 1","Salah satunya negatif"],a:2,e:"Untuk bentuk umum standar, koefisien $x^2$ dan $y^2$ sama, biasanya 1."},
+{q:"Lingkaran berpusat di (4,−2) melalui titik (7,2). Persamaannya adalah …",c:["$(x-4)^2+(y+2)^2=25$","$(x+4)^2+(y-2)^2=25$","$(x-4)^2+(y-2)^2=5$","$(x+4)^2+(y+2)^2=5$"],a:0,e:"r²=(7−4)²+(2+2)²=9+16=25."},
+{q:"Bentuk baku dari $x^2+y^2-2x+4y-20=0$ adalah …",c:["$(x-1)^2+(y+2)^2=25$","$(x+1)^2+(y-2)^2=25$","$(x-1)^2+(y-2)^2=20$","$(x+1)^2+(y+2)^2=20$"],a:0,e:"Lengkapi kuadrat pada x dan y."}
+]},
+{id:3,title:"Coordinate Detective",tag:"LEVEL 3",icon:"🟡",desc:"Pusat, jari-jari, dan posisi titik",questions:[
+{q:"Lingkaran $x^2+y^2-4x+6y-12=0$ melalui titik P. Titik yang mungkin adalah …",c:["(6,0)","(0,2)","(2,6)","(−2,−6)"],a:0,e:"Substitusi (6,0): 36−24−12=0."},
+{q:"Titik P(5,1) berjarak berapa dari pusat lingkaran O(1,−2)?",c:["4","5","√17","√25"],a:3,e:"Jarak = √[(5−1)²+(1+2)²]=√25=5."},
+{q:"Sebuah lingkaran berpusat di (2,1) melalui A(5,5). Apakah titik B(−1,5) berada pada lingkaran?",c:["Ya, karena jaraknya sama","Tidak, karena lebih dekat","Tidak, karena lebih jauh","Tidak dapat ditentukan"],a:0,e:"OA=5. OB=√[(−3)²+4²]=5."},
+{q:"Garis yang menghubungkan pusat lingkaran dengan titik pada lingkaran disebut …",c:["Diameter","Tali busur","Jari-jari","Garis singgung"],a:2,e:"Definisi jari-jari."},
+{q:"Lingkaran berpusat O(3,−1) dan melalui P(3,5). Titik Q(9,−1) terhadap lingkaran berada …",c:["Di dalam","Pada lingkaran","Di luar","Di pusat"],a:1,e:"OP=6 dan OQ=6, jadi Q pada lingkaran."},
+{q:"Jika sebuah titik memiliki jarak dari pusat lebih kecil daripada jari-jari, maka titik tersebut berada …",c:["Pada lingkaran","Di luar lingkaran","Di dalam lingkaran","Di pusat selalu"],a:2,e:"Jarak titik ke pusat < r berarti titik berada di dalam."}
+]},
+{id:4,title:"Three-Point Mission",tag:"LEVEL 4",icon:"🟠",desc:"Persamaan lingkaran melalui tiga titik",questions:[
+{q:"Tentukan persamaan lingkaran yang melalui D(0,8), E(6,0), dan F(0,0).",c:["$x^2+y^2-6x-8y=0$","$x^2+y^2+6x+8y=0$","$x^2+y^2-8x-6y=0$","$x^2+y^2+8x-6y=0$"],a:0,e:"Substitusi F memberi C=0; E memberi A=−6; D memberi B=−8."},
+{q:"Untuk lingkaran melalui A(0,0), B(4,0), C(0,6), nilai koefisien A pada $x^2+y^2+Ax+By+C=0$ adalah …",c:["−4","−6","4","6"],a:0,e:"B(4,0): 16+4A=0, sehingga A=−4."},
+{q:"Lingkaran melalui (0,0), (6,0), dan (0,8) memiliki pusat …",c:["(3,4)","(−3,−4)","(6,8)","(4,3)"],a:0,e:"Persamaan x²+y²−6x−8y=0 → pusat (3,4)."},
+{q:"Mengapa tiga titik yang tidak segaris dapat menentukan satu lingkaran?",c:["Karena tiga titik selalu menjadi diameter","Karena ada tepat satu lingkaran yang melalui tiga titik tidak segaris","Karena semua segitiga adalah lingkaran","Karena pusat selalu di titik pertama"],a:1,e:"Tiga titik tidak segaris menentukan circumcircle yang unik."},
+{q:"Untuk menentukan persamaan lingkaran melalui tiga titik dengan bentuk umum, sistem persamaan yang dibentuk untuk A, B, C termasuk …",c:["SPLDV","SPLTV","Persamaan kuadrat tunggal","Pertidaksamaan"],a:1,e:"Tiga titik menghasilkan tiga persamaan linear dalam A, B, C."},
+{q:"Jika tiga titik yang diberikan ternyata segaris, maka …",c:["Selalu ada dua lingkaran","Ada tepat satu lingkaran","Tidak ada lingkaran berhingga yang melalui ketiganya","Jari-jari selalu 0"],a:2,e:"Tiga titik segaris tidak dapat menjadi tiga titik berbeda pada satu lingkaran berhingga."}
+]},
+{id:5,title:"Circle Master",tag:"LEVEL 5",icon:"🔴",desc:"Challenge kontekstual dan kombinasi konsep",questions:[
+{q:"Sebuah radar memiliki jangkauan berbentuk lingkaran dengan pusat (2,3) dan radius 10 km. Posisi kapal (8,11) berada …",c:["Di dalam jangkauan","Pada batas jangkauan","Di luar jangkauan","Tepat di pusat"],a:1,e:"Jarak = √(6²+8²)=10 km, tepat pada batas."},
+{q:"Sebuah desain taman berbentuk lingkaran melalui tiga titik D(0,8), E(6,0), F(0,0). Pusat taman adalah …",c:["(3,4)","(−3,−4)","(4,3)","(6,8)"],a:0,e:"Dari persamaan x²+y²−6x−8y=0, pusatnya (3,4)."},
+{q:"Diketahui lingkaran $x^2+y^2-6x-8y=0$. Sebuah titik P(9,12) akan …",c:["Berada di dalam lingkaran","Berada pada lingkaran","Berada di luar lingkaran","Berada di pusat"],a:2,e:"Pusat (3,4), r=5. Jarak P ke pusat =10 >5."},
+{q:"Sebuah drone bergerak di area yang dibatasi lingkaran $(x-5)^2+(y-4)^2=36$. Jika drone berada di (8,8), kondisi posisinya adalah …",c:["Di luar area","Pada batas area","Di dalam area","Di pusat"],a:2,e:"Jarak dari pusat = √(3²+4²)=5, sedangkan r=6. Karena 5<6, drone berada di dalam area."},
+{q:"Sebuah lingkaran memiliki diameter dengan ujung P(−2,3) dan Q(6,7). Pusat lingkaran adalah …",c:["(2,5)","(4,2)","(−4,−2)","(8,10)"],a:0,e:"Pusat adalah titik tengah: ((−2+6)/2,(3+7)/2)=(2,5)."},
+{q:"Sebuah lingkaran berpusat (4,−3) menyinggung sumbu-x. Jari-jarinya adalah …",c:["3","4","7","1"],a:0,e:"Jarak pusat ke sumbu-x = |−3|=3."}
+]}];
+
+let bank=JSON.parse(localStorage.getItem("circleQuestBank")||"null")||LEVELS;
+let state=JSON.parse(localStorage.getItem("circleQuestState")||"null")||{name:"",unlocked:1,totalScore:0,best:{},progress:{}};
+let currentLevel=null,currentQuestions=[],qIndex=0,correct=0,levelPoints=0,startTime=0,timerInt=null,answered=false,review=[];
+
+const $=id=>document.getElementById(id);
+function save(){localStorage.setItem("circleQuestState",JSON.stringify(state));localStorage.setItem("circleQuestBank",JSON.stringify(bank))}
+function show(id){document.querySelectorAll(".screen").forEach(x=>x.classList.remove("active"));$(id).classList.add("active");}
+function shuffle(a){a=[...a];for(let i=a.length-1;i>0;i--){let j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+function renderMath(){if(window.MathJax)MathJax.typesetPromise().catch(()=>{})}
+function start(){let n=$("studentName").value.trim();if(!n)return alert("Silakan masukkan nama terlebih dahulu.");state.name=n;save();$("studentBadge").textContent=n;$("studentBadge").classList.remove("hidden");renderMap();show("mapScreen")}
+function renderMap(){let html="";bank.forEach(l=>{let unlocked=l.id<=state.unlocked;let best=state.best[l.id]||0;html+=`<article class="level-card ${unlocked?"":"locked"}"><div><div class="level-number">${l.tag}</div><div class="level-icon">${l.icon}</div><h3>${l.title}</h3><p>${l.desc}</p></div><div><small>${best?best+" poin terbaik":"Belum dimainkan"}</small><button class="primary-btn" ${unlocked?"":"disabled"} onclick="startLevel(${l.id})">${unlocked?"Mulai Level":"🔒 Terkunci"}</button></div></article>`});$("levelGrid").innerHTML=html}
+function startLevel(id){currentLevel=bank.find(x=>x.id===id);currentQuestions=shuffle(currentLevel.questions).slice(0,Math.min(5,currentLevel.questions.length));qIndex=0;correct=0;levelPoints=0;review=[];answered=false;startTime=Date.now();clearInterval(timerInt);timerInt=setInterval(updateTimer,1000);$("gameLevelTag").textContent=currentLevel.tag;$("gameLevelTitle").textContent=currentLevel.title;show("gameScreen");renderQuestion()}
+function updateTimer(){let s=Math.floor((Date.now()-startTime)/1000);$("timer").textContent=fmt(s)}
+function fmt(s){return String(Math.floor(s/60)).padStart(2,"0")+":"+String(s%60).padStart(2,"0")}
+function renderQuestion(){answered=false;$("feedback").className="feedback hidden";$("nextBtn").classList.add("hidden");let q=currentQuestions[qIndex];$("questionCount").textContent=`Soal ${qIndex+1} dari ${currentQuestions.length}`;$("scoreText").textContent=`Poin level: ${levelPoints}`;$("progressBar").style.width=((qIndex)/currentQuestions.length*100)+"\%";$("questionText").innerHTML=q.q;let choices=q.c.map((x,i)=>`<button class="choice" data-i="${i}" onclick="answer(${i})">${String.fromCharCode(65+i)}. ${x}</button>`).join("");$("choices").innerHTML=choices;renderMath()}
+function answer(i){if(answered)return;answered=true;let q=currentQuestions[qIndex],buttons=[...document.querySelectorAll(".choice")];buttons[q.a].classList.add("correct");if(i===q.a){correct++;levelPoints+=100;let speed=Math.max(0,20-Math.floor((Date.now()-startTime)/1000));levelPoints+=speed;$("feedback").className="feedback ok";$("feedback").innerHTML="✓ Benar! "+q.e}else{buttons[i].classList.add("wrong");$("feedback").className="feedback no";$("feedback").innerHTML="✗ Belum tepat. "+q.e}review.push({q:q.q,ok:i===q.a});$("nextBtn").classList.remove("hidden");$("progressBar").style.width=((qIndex+1)/currentQuestions.length*100)+"%";renderMath()}
+function next(){if(qIndex<currentQuestions.length-1){qIndex++;renderQuestion()}else finish()}
+function finish(){clearInterval(timerInt);let time=Math.floor((Date.now()-startTime)/1000),passed=correct>=Math.ceil(currentQuestions.length*.8);state.totalScore+=levelPoints;state.best[currentLevel.id]=Math.max(state.best[currentLevel.id]||0,levelPoints);if(passed&&currentLevel.id===state.unlocked&&state.unlocked<5)state.unlocked++;save();$("resultIcon").textContent=passed?"🏆":"💪";$("resultTitle").textContent=passed?"Level Berhasil!":"Coba Lagi";$("resultCorrect").textContent=correct;$("resultTotal").textContent=currentQuestions.length;$("resultPoints").textContent=levelPoints;$("resultTime").textContent=fmt(time);$("resultBest").textContent=state.totalScore;$("resultMessage").textContent=passed?(currentLevel.id===5?"Luar biasa! Kamu telah menaklukkan Circle Quest.":"Level berikutnya telah terbuka."):`Kamu membutuhkan minimal ${Math.ceil(currentQuestions.length*.8)} jawaban benar untuk membuka level berikutnya.`;$("reviewBox").innerHTML=review.map((r,i)=>`<div class="review-item">${r.ok?"✓":"✗"} Soal ${i+1}: ${r.ok?"Benar":"Perlu diperbaiki"}</div>`).join("");$("retryBtn").style.display="";$("continueBtn").textContent="Kembali ke Peta →";show("resultScreen")}
+$("startBtn").onclick=start;$("nextBtn").onclick=next;$("continueBtn").onclick=()=>{renderMap();show("mapScreen")};$("retryBtn").onclick=()=>startLevel(currentLevel.id);$("backMapBtn").onclick=()=>{clearInterval(timerInt);renderMap();show("mapScreen")};$("resetBtn").onclick=()=>{if(confirm("Reset seluruh progres siswa?")){state={name:state.name,unlocked:1,totalScore:0,best:{},progress:{}};save();renderMap()}};$("adminBtn").onclick=renderAdmin;$("adminBackBtn").onclick=()=>{renderMap();show("mapScreen")};
+
+function renderAdmin(){show("adminScreen");$("adminLevels").innerHTML=bank.map(l=>`<div class="admin-level"><h3>${l.icon} ${l.tag} — ${l.title}</h3>${l.questions.map((q,i)=>`<div class="admin-question"><button onclick="deleteQ(${l.id},${i})">Hapus</button><b>${i+1}.</b>${q.q}</div>`).join("")}<div class="add-form"><b>Tambah soal</b><textarea id="newq${l.id}" rows="2" placeholder="Pertanyaan (boleh menggunakan LaTeX)"></textarea><input id="newa${l.id}" placeholder="Jawaban benar (A/B/C/D)"><textarea id="newc${l.id}" rows="4" placeholder="Pilihan, satu per baris"></textarea><textarea id="newe${l.id}" rows="2" placeholder="Pembahasan"></textarea><button class="secondary-btn" onclick="addQ(${l.id})">+ Tambahkan</button></div></div>`).join("");renderMath()}
+function addQ(id){let q=$("newq"+id).value.trim(),a=$("newa"+id).value.trim().toUpperCase(),cs=$("newc"+id).value.split("\n").map(x=>x.trim()).filter(Boolean),e=$("newe"+id).value.trim();if(!q||!"ABCD".includes(a)||cs.length!==4)return alert("Isi pertanyaan, 4 pilihan, dan jawaban A/B/C/D.");bank.find(l=>l.id===id).questions.push({q,c:cs,a:"ABCD".indexOf(a),e:e||"Belum ada pembahasan."});save();renderAdmin()}
+function deleteQ(id,i){if(confirm("Hapus soal ini dari bank?")){bank.find(l=>l.id===id).questions.splice(i,1);save();renderAdmin()}}
+window.startLevel=startLevel;window.answer=answer;window.next=next;window.addQ=addQ;window.deleteQ=deleteQ;
